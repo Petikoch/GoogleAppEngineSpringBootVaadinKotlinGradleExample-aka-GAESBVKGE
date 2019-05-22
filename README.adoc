@@ -34,7 +34,7 @@ If you want to deploy the example yourself to the Google App Engine you need
 
 . Create a minimal Spring Boot Vaadin Kotlin Example
 .. https://start.spring.io/
-.. Pick all you need/want and download the result
+.. Pick all the stuff you need/want (Gradle/Maven, Java/Kotlin/Groovy, Vaadin, Security, Reactive Web, ...) and download the result
 .. Unpack it, open it in your favourite IDE (e.g. IntelliJ) and run it using `gradlew bootRun`
 .. Approx. 5 Minutes
 
