@@ -49,7 +49,7 @@ If you want to deploy the example yourself to the Google App Engine you need
 ... `network: session_affinity: true`, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
 ... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
 ... https://cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity (scroll down to the end)
-.. The default `resources.memory_gb` in link:src/main/appengine/app.yaml[src/main/appengine/app.yaml] (==when not set) is 0.6 and was too small for this "Spring Boot Vaadin Combo". The GAE instances didn't start up properly and the deployment failed.
+.. The default `resources.memory_gb` in link:src/main/appengine/app.yaml[src/main/appengine/app.yaml] is 0.6 and was too small for this "Spring Boot Vaadin Combo". The GAE instances didn't start up properly and the deployment failed.
 ... I set it to 2 gb, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
 .. Using the "new" 2.x Version of the App Engine Gradle Plugin
 ... https://github.com/GoogleCloudPlatform/app-gradle-plugin
