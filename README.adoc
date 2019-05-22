@@ -6,7 +6,7 @@ Live Demo: https://gaesbvkge.appspot.com/
 
 == Introduction
 
-This example shows the setup of a Gradle project using a lot of absolutely great software
+This example shows the setup of a Gradle project using this fascinating pieces of software
 
 * Google AppEngine Flex Java 8 Runtime
 ** https://cloud.google.com/appengine/docs/flexible/java/dev-java-only
@@ -22,11 +22,18 @@ This example shows the setup of a Gradle project using a lot of absolutely great
 * Kotlin 1.3.x
 ** https://kotlinlang.org/docs/reference/
 
+The most important files in this project are
+
+* link:build.gradle.kts[build.gradle.kts]
+* link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
+
+
+
 If you want to deploy the example yourself to the Google AppEngine you need
 
 * a GCP account
 * the Google "Cloud  SDK" on your local machine installed (including gcloud etc)
-* `gradlew appengineDeploy`
+* then you can run `gradlew appengineDeploy`
 * See https://cloud.google.com/appengine/docs/flexible/java/quickstart for details
 
 == My steps to produce the example
@@ -34,11 +41,12 @@ If you want to deploy the example yourself to the Google AppEngine you need
 . Create a minimal Spring Boot Vaadin Kotlin Example
 .. https://start.spring.io/
 .. Pick all you need/want and download the result
-.. Unpack it, open it in your favourite IDE (mine is IntelliJ) and run it using `gradlew bootRun`
+.. Unpack it, open it in your favourite IDE (e.g. IntelliJ) and run it using `gradlew bootRun`
 .. Approx. 5 Minutes
 
 . Add a minimal Vaadin Page
 .. I used `MainView` from https://spring.io/guides/gs/crud-with-vaadin/
+.. link:src/main/kotlin/ch/petikoch/examples/gaesbvkge/ui/vaadin/MainView.kt[src/main/kotlin/ch/petikoch/examples/gaesbvkge/ui/vaadin/MainView.kt]
 .. Approx. 5 Minutes
 
 . Now deploy it to Google AppEngine Flex
@@ -54,9 +62,10 @@ If you want to deploy the example yourself to the Google AppEngine you need
 ... and not the old 1.x Version which is everywhere in the official documentation
 .. Properly configure the Gradle AppEngine Plugin
 ... There were no "Gradle Kotlin Script" Syntax examples, all the examples used the Groovy Syntax
+... Result: link:build.gradle.kts[build.gradle.kts] and link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
 
 
-== Final last word
+== Final last words
 
 I hope this example helps you saving some hours.
 If you have questions / remarks, please use Issue tracker of this Github project.

@@ -12,4 +12,5 @@ class MainView : VerticalLayout() {
         add(Text("Hello World!"))
         add(Button("Click me") { e -> Notification.show("Hello Google AppEngine Spring Boot Vaadin Kotlin User!") })
     }
+
 }
