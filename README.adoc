@@ -17,7 +17,7 @@ This example shows the setup of a Gradle project using this fascinating pieces o
 * Vaadin 13.0.x
 ** https://vaadin.com/flow
 * Gradle 5.4.x
-** with the new, type-safe "Gradle Kotlin Script" Syntax (instead the "old", dynamic Groovy syntax)
+** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
 * Kotlin 1.3.x
 ** https://kotlinlang.org/docs/reference/
@@ -56,7 +56,7 @@ If you want to deploy the example yourself to the Google App Engine you need
 ... and not the old 1.x Version which is everywhere in the official documentation
 ... Result: link:build.gradle.kts[build.gradle.kts]
 .. Properly configure the Gradle App Engine Plugin
-... There were no "Gradle Kotlin Script" Syntax examples, all the examples used the Groovy Syntax
+... There were no "Gradle Kotlin DSL" Syntax examples, all the examples used the Groovy Syntax
 ... Result: link:build.gradle.kts[build.gradle.kts]
 
 == Final last words
