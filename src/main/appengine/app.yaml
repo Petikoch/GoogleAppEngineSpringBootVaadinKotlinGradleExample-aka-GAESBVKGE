@@ -1,0 +1,13 @@
+# https://cloud.google.com/appengine/docs/flexible/java/dev-java-only
+runtime: java
+env: flex
+runtime_config:
+  jdk: openjdk8
+handlers:
+  - url: /.*
+    script: this field is required, but ignored
+resources:
+  memory_gb: 2
+# default memory_gb is 0.6. The default didn't work for me so I increased it.
+network:
+  session_affinity: true

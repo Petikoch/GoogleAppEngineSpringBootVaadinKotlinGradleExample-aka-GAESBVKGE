@@ -1,0 +1,76 @@
+= GAESBVKGE: The Google AppEngine Spring Boot Vaadin Kotlin Gradle Example
+Peti Koch
+:imagesdir: ./docs
+
+Live Demo: https://gaesbvkge.appspot.com/
+
+== Introduction
+
+This example shows the setup of a Gradle project using a lot of absolutely great software
+
+* Google AppEngine Flex Java 8 Runtime
+** https://cloud.google.com/appengine/docs/flexible/java/dev-java-only
+** with the V.2 Gradle Plugin
+*** https://github.com/GoogleCloudPlatform/app-gradle-plugin
+* Spring Boot 2.1.x
+** https://spring.io/projects/spring-boot
+* Vaadin 13.0.x
+** https://vaadin.com/flow
+* Gradle 5.4.x
+** with the new, type-safe "Gradle Kotlin Script" Syntax (instead the "old", dynamic Groovy syntax)
+** https://gradle.org/
+* Kotlin 1.3.x
+** https://kotlinlang.org/docs/reference/
+
+If you want to deploy the example yourself to the Google AppEngine you need
+
+* a GCP account
+* the Google "Cloud  SDK" on your local machine installed (including gcloud etc)
+* `gradlew appengineDeploy`
+* See https://cloud.google.com/appengine/docs/flexible/java/quickstart for details
+
+== My steps to produce the example
+
+. Create a minimal Spring Boot Vaadin Kotlin Example
+.. https://start.spring.io/
+.. Pick all you need/want and download the result
+.. Unpack it, open it in your favourite IDE (mine is IntelliJ) and run it using `gradlew bootRun`
+.. Approx. 5 Minutes
+
+. Add a minimal Vaadin Page
+.. I used `MainView` from https://spring.io/guides/gs/crud-with-vaadin/
+.. Approx. 5 Minutes
+
+. Now deploy it to Google AppEngine Flex
+.. This was the hard stuff for me... it took hours to find the right bits from the sea of outdated information (I wasn't a GAE user before).
+.. Vaadin needs "sticky sessions", which wasn't available in Flex, up to to recent introduction of the WebSockets Beta
+... `network: session_affinity: true`, see `app.yaml`
+... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
+... https://cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity (scroll down to the end)
+.. The default `resources.memory_gb` in `app.yaml` is 0.6 and was to small for this "Spring Boot Vaadin Combo". The GAE instances didn't start up properly and the deployment failed.
+... I set it to 2 gb, see  `app.yaml`
+.. Using the "new" 2.x Version of the AppEngine Gradle Plugin
+... https://github.com/GoogleCloudPlatform/app-gradle-plugin
+... and not the old 1.x Version which is everywhere in the official documentation
+.. Properly configure the Gradle AppEngine Plugin
+... There were no "Gradle Kotlin Script" Syntax examples, all the examples used the Groovy Syntax
+
+
+== Final last word
+
+I hope this example helps you saving some hours.
+If you have questions / remarks, please use Issue tracker of this Github project.
+
+I thank to all the creators of the fascinating pieces of software like
+
+* Google AppEngine
+* Spring Boot
+* Vaadin
+* Kotlin
+* Gradle
+
+And to all the creators of the underlying technology like Java, Linux, Docker, Kubernetes, ...
+
+Best regards,
+
+image::Signature.jpg[]

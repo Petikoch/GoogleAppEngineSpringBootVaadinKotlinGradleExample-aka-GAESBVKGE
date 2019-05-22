@@ -10,6 +10,6 @@ import com.vaadin.flow.router.Route
 class MainView : VerticalLayout() {
     init {
         add(Text("Hello World!"))
-        add(Button("Click me") { e -> Notification.show("Hello Google AppEngine  Spring+Vaadin user!") })
+        add(Button("Click me") { e -> Notification.show("Hello Google AppEngine Spring Boot Vaadin Kotlin User!") })
     }
 }
