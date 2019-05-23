@@ -23,7 +23,7 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
 
-== Steps to produce this example
+== Steps to produce this example (May 2019)
 
 . Create a minimal Spring Boot Vaadin Kotlin Example (approx. 5 Minutes)
 .. https://start.spring.io/
