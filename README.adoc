@@ -40,6 +40,7 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
 ... https://cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity (scroll down to the end)
 ... Add `network/session_affinity: true` to link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
+... Note: This `session_affinity` option is at the moment not mentioned in the `app.yaml` reference docs https://cloud.google.com/appengine/docs/flexible/java/reference/app-yaml. I don't know how "experimental" it is but it seems to work fine and makes totally sense.
 .. The default `resources.memory_gb` in link:src/main/appengine/app.yaml[src/main/appengine/app.yaml] is 0.6 and was too small for this "Spring Boot Vaadin Combo". The GAE instances did not start up properly and were not considered "healthy", the deployment always failed.
 ... I set it to `2` gb, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
 .. Using the "new" 2.x Version of the App Engine Gradle Plugin
