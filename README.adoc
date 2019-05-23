@@ -89,8 +89,9 @@ https://vaadin.com/forum/thread/17281467/kubernetes-deployment.
 But session replication is not easy, read https://vaadin.com/blog/session-replication-in-the-world-of-vaadin for more details to the topic.
 
 If you want to stay "on the server-side" I would recommend to investigate instead a "uni-directional" UI pattern approach (based on the ideas of Flux/Redux/MVI/...)
-and only keep the "essential" (UI-Toolkit agnostic) UI-State "somewhere" in a "high-available" fashion and use a technology like Vaadin just as replaceable UI-State "renderer".
-The "uni-directional" UI pattern approach gives you many more other benefits beside of beeing able to run in a **highly dynamic environment**
+and only keep the "essential" (UI-Toolkit agnostic) UI-State "somewhere" in a "high-available" fashion.
+Why not use a technology like Vaadin just as replaceable "UI-State renderer"?
+The "uni-directional" UI pattern approach gives you many more other benefits beside of beeing able to potentially run easily in a **highly dynamic environment**
 like Kubernetes or Google App Engine (Flex).
 
 == Final last words
