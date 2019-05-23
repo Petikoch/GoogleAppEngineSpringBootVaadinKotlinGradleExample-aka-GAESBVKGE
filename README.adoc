@@ -2,7 +2,7 @@
 Peti Koch
 :imagesdir: ./docs
 
-Live Demo: https://gaesbvkge.appspot.com/
+Try: https://gaesbvkge.appspot.com/
 
 == Introduction
 
