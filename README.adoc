@@ -1,4 +1,4 @@
-= GAESBVKGE: The Google App Engine Spring Boot Vaadin Kotlin Gradle Example
+= GAESBVKGE: The Google App Engine (Flex) Spring Boot Vaadin Kotlin Gradle (Kotlin DSL) Example
 Peti Koch
 :imagesdir: ./docs
 
@@ -6,7 +6,7 @@ Live Demo: https://gaesbvkge.appspot.com/
 
 == Introduction
 
-This example shows the setup of a Gradle project using this fascinating pieces of software
+This example shows the setup of a Gradle project using these fascinating pieces of software
 
 * Google App Engine Flex Java 8 Runtime
 ** https://cloud.google.com/appengine/docs/flexible/java/dev-java-only
@@ -14,8 +14,9 @@ This example shows the setup of a Gradle project using this fascinating pieces o
 *** https://github.com/GoogleCloudPlatform/app-gradle-plugin
 * Spring Boot 2.1.x
 ** https://spring.io/projects/spring-boot
+** https://start.spring.io/
 * Vaadin 13.0.x
-** https://vaadin.com/flow
+** https://vaadin.com/tutorials/vaadin-quick-start
 * Gradle 5.4.x
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
@@ -23,14 +24,13 @@ This example shows the setup of a Gradle project using this fascinating pieces o
 ** https://kotlinlang.org/docs/reference/
 
 
-If you want to deploy the example yourself to the Google App Engine you need
+If you want to deploy this example yourself to the Google App Engine you need
 
-* a GCP account
-* the Google "Cloud  SDK" on your local machine installed (including gcloud etc)
-* then you can run `gradlew appengineDeploy`
-* See https://cloud.google.com/appengine/docs/flexible/java/quickstart for details
+. Install the tooling for Google Cloud according https://cloud.google.com/appengine/docs/flexible/java/quickstart
+. Update to the lastest version of the `gcloud` tooling using `gcloud components update`
+. Run `gradlew appengineDeploy`
 
-== My steps to produce the example
+== Steps to produce this example
 
 . Create a minimal Spring Boot Vaadin Kotlin Example
 .. https://start.spring.io/
@@ -43,25 +43,26 @@ If you want to deploy the example yourself to the Google App Engine you need
 .. Result: link:src/main/kotlin/ch/petikoch/examples/gaesbvkge/ui/vaadin/MainView.kt[src/main/kotlin/ch/petikoch/examples/gaesbvkge/ui/vaadin/MainView.kt]
 .. Approx. 5 Minutes
 
-. Now deploy it to Google App Engine Flex
-.. This was the hard stuff for me... it took hours to find the right bits from the sea of outdated information (I wasn't a GAE user before).
-.. Vaadin needs "sticky sessions", which wasn't available in Flex, up to to recent introduction of the WebSockets Beta
-... `network: session_affinity: true`, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
+. Adjust the Grade project with the necessary lines and files like `app.yaml` for deployments to the Google App Engine (Flex)
+.. This was the hard stuff for me... it took hours to find the right bits from the sea of outdated and sometimes incomplete information (I wasn't a GAE user before)
+.. Since Vaadin is a server-side focused technology, it needs "sticky sessions", which wasn't available in Flex, up to to recent introduction of the WebSockets Beta
 ... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
 ... https://cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity (scroll down to the end)
-.. The default `resources.memory_gb` in link:src/main/appengine/app.yaml[src/main/appengine/app.yaml] is 0.6 and was too small for this "Spring Boot Vaadin Combo". The GAE instances didn't start up properly and the deployment failed.
-... I set it to 2 gb, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
+... Add `network/session_affinity: true` to link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
+.. The default `resources.memory_gb` in link:src/main/appengine/app.yaml[src/main/appengine/app.yaml] is 0.6 and was too small for this "Spring Boot Vaadin Combo". The GAE instances did not start up properly and were not considered "healthy", the deployment always failed.
+... I set it to `2` gb, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
 .. Using the "new" 2.x Version of the App Engine Gradle Plugin
 ... https://github.com/GoogleCloudPlatform/app-gradle-plugin
-... and not the old 1.x Version which is everywhere in the official documentation
+... and not the old, deprecated 1.x Version (https://github.com/GoogleCloudPlatform/gradle-appengine-plugin) which is everywhere in the official documentation (like here https://cloud.google.com/appengine/docs/flexible/java/using-gradle)
 ... Result: link:build.gradle.kts[build.gradle.kts]
 .. Properly configure the Gradle App Engine Plugin
-... There were no "Gradle Kotlin DSL" Syntax examples, all the examples used the Groovy Syntax
+... There were no "Gradle Kotlin DSL" syntax examples, all the examples used the Groovy Syntax
+... See/upvote https://github.com/GoogleCloudPlatform/app-gradle-plugin/issues/348
 ... Result: link:build.gradle.kts[build.gradle.kts]
 
 == Final last words
 
-I hope this example helps the reader to save some hours.
+I hope this example helps the reader to save some hours "to set things up".
 If you have questions / remarks, please use issue tracker of this Github project.
 
 Thanks to all the creators of the fascinating pieces of software used in the examples like
@@ -72,7 +73,7 @@ Thanks to all the creators of the fascinating pieces of software used in the exa
 * Kotlin
 * Gradle
 
-And to all the creators of the underlying technology like Java, Linux, Docker, Kubernetes, ...
+And to all the creators of the underlying technology like Java, Linux, Docker, Kubernetes, HTTP, TCP, ...
 
 Best regards,
 
