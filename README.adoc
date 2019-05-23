@@ -20,30 +20,28 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 * Gradle 5.4.x
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
-* Kotlin 1.3.x
+* Kotlin 1.3.x running on Java 8
 ** https://kotlinlang.org/docs/reference/
 
 
-If you want to deploy this example yourself to the Google App Engine you need
+If you want to deploy this example yourself
 
-. Install the tooling for Google Cloud according https://cloud.google.com/appengine/docs/flexible/java/quickstart
+. Install the tooling for "Google Cloud" according https://cloud.google.com/appengine/docs/flexible/java/quickstart
 . Update to the lastest version of the `gcloud` tooling using `gcloud components update`
 . Run `gradlew appengineDeploy`
 
 == Steps to produce this example
 
-. Create a minimal Spring Boot Vaadin Kotlin Example
+. Create a minimal Spring Boot Vaadin Kotlin Example (approx. 5 Minutes)
 .. https://start.spring.io/
 .. Pick all the stuff you need/want (Gradle/Maven, Java/Kotlin/Groovy, Vaadin, Security, Reactive Web, ...) and download the result
 .. Unpack it, open it in your favourite IDE (e.g. IntelliJ) and run it using `gradlew bootRun`
-.. Approx. 5 Minutes
 
-. Add a minimal Vaadin Page
+. Add a minimal Vaadin Page (approx. 5 Minutes)
 .. I used `MainView` from https://spring.io/guides/gs/crud-with-vaadin/
 .. Result: link:src/main/kotlin/ch/petikoch/examples/gaesbvkge/ui/vaadin/MainView.kt[src/main/kotlin/ch/petikoch/examples/gaesbvkge/ui/vaadin/MainView.kt]
-.. Approx. 5 Minutes
 
-. Adjust the Grade project with the necessary lines and files like `app.yaml` for deployments to the Google App Engine (Flex)
+. Adjust the Grade project with the necessary lines and files like `app.yaml` for deployments to the Google App Engine (Flex) (approx. 5 minutes if you follow my example)
 .. This was the hard stuff for me... it took hours to find the right bits from the sea of outdated and sometimes incomplete information (I wasn't a GAE user before)
 .. Since Vaadin is a server-side focused technology, it needs "sticky sessions", which wasn't available in Flex, up to to recent introduction of the WebSockets Beta
 ... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
