@@ -78,7 +78,7 @@ Thanks to all the creators of the fascinating pieces of software used in the exa
 * Kotlin
 * Gradle
 
-And to all the creators of the underlying technology like Java, Linux, Docker, Kubernetes, HTTP, TCP, ...
+And to all the creators of the underlying technology like Java, Linux, Docker, Kubernetes, HTML, HTTP, TCP, ...
 
 Best regards,
 
