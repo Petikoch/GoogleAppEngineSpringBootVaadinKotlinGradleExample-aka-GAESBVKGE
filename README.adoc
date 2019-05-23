@@ -17,12 +17,11 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ** https://start.spring.io/
 * Vaadin 13.0.x
 ** https://vaadin.com/tutorials/vaadin-quick-start
+* Kotlin 1.3.x running on Java 8
+** https://kotlinlang.org/docs/reference/
 * Gradle 5.4.x
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
-* Kotlin 1.3.x running on Java 8
-** https://kotlinlang.org/docs/reference/
-
 
 If you want to deploy this example yourself
 
