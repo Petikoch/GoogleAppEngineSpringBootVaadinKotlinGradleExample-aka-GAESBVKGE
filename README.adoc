@@ -23,12 +23,6 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
 
-If you want to deploy this example yourself
-
-. Install the tooling for "Google Cloud" according https://cloud.google.com/appengine/docs/flexible/java/quickstart
-. Update to the lastest version of the `gcloud` tooling using `gcloud components update`
-. Run `gradlew appengineDeploy`
-
 == Steps to produce this example
 
 . Create a minimal Spring Boot Vaadin Kotlin Example (approx. 5 Minutes)
@@ -56,6 +50,15 @@ If you want to deploy this example yourself
 ... There were no "Gradle Kotlin DSL" syntax examples, all the examples used the Groovy Syntax
 ... See/upvote https://github.com/GoogleCloudPlatform/app-gradle-plugin/issues/348
 ... Result: link:build.gradle.kts[build.gradle.kts]
+
+== If you want to deploy this example yourself
+
+. Install the tooling for "Google Cloud" on your local machine according https://cloud.google.com/appengine/docs/flexible/java/quickstart
+. Update to the lastest version of the `gcloud` tooling using `gcloud components update`
+. Install an up-to-date version of the Java 8 JDK from e.g. https://adoptopenjdk.net/
+. Use an IDE like IntelliJ to make like easy
+. Clone this repo to your local machine and open it in your favorite IDE
+. Run `gradlew appengineDeploy` in your IDE or in a shell
 
 == Final last words
 
