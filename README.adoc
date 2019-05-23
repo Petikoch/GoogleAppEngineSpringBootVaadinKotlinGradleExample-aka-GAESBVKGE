@@ -23,24 +23,6 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
 
-CAUTION: Vaadin is a **server-side focused technology**.
-There is a lot of state on the server-side
-(e.g. inside the HTTP-Session of a Webcontainer like Tomcat,
-there is the VaadinSession containing the server-side "half-objects" of the labels, buttons, textfields, radiobuttons, ...).
-Google App Engine (Flex) is a **highly dynamic environment** where instances of your application may be started or killed at any time.
-There is absolutely no warranty in Google App Engine (Flex),
-that the server instance running one instance of your Vaadin application and hosting some of the HTTP-Sessions of your users,
-exists during the lifetime of the HTTP-Session of your users. Your Google App Engine (Flex) server instance and therefor HTTP-Sessions may be killed at any time.
-**This is the container era**! You have the same issues when you run your Vaadin application on Kubernetes, Openshift, Docker Swarm, ...
-This has a potential huge impact on the way you write your application.
-The traditional solutions to that type of problem are classic approaches like session replication using e.g. "Spring Session", see e.g. https://vaadin.com/tutorials/microservices/high-availability or
-https://vaadin.com/forum/thread/17281467/kubernetes-deployment.
-But it's not easy, read https://vaadin.com/blog/session-replication-in-the-world-of-vaadin for more details to the topic.
-I personally would try instead a "uni-directional" UI pattern approach (Flux/Redux/MVI)
-and only keep the "essential" (UI Toolkit agnostic) UI-State "somewhere" in a "high-available" fashion.
-This gives you many more other benefits beside of beeing able to run in a **highly dynamic environment**
-like Kubernetes or Google App Engine (Flex).
-
 == Steps to produce this example (May 2019)
 
 . Create a minimal Spring Boot Vaadin Kotlin Example (approx. 5 Minutes)
@@ -82,6 +64,26 @@ like Kubernetes or Google App Engine (Flex).
 . Install the tooling for "Google Cloud" on your local machine according https://cloud.google.com/appengine/docs/flexible/java/quickstart
 . Update to the lastest version of the `gcloud` tooling using `gcloud components update`
 . Run `gradlew appengineDeploy` in your IDE or in a shell
+
+== Caution
+
+CAUTION: Vaadin is a **server-side focused technology**.
+There is a lot of state on the server-side
+(e.g. inside the HTTP-Session of a Webcontainer like Tomcat,
+there is the VaadinSession containing the server-side "half-objects" of the labels, buttons, textfields, radiobuttons, ...).
+Google App Engine (Flex) is a **highly dynamic environment** where instances of your application may be started or killed at any time.
+There is absolutely no warranty in Google App Engine (Flex),
+that the server instance running one instance of your Vaadin application and hosting some of the HTTP-Sessions of your users,
+exists during the lifetime of the HTTP-Session of your users. Your Google App Engine (Flex) server instance and therefor HTTP-Sessions may be killed at any time.
+**This is the container era**! You have the same issues when you run your Vaadin application on Kubernetes, Openshift, Docker Swarm, ...
+This has a potential huge impact on the way you write your application using **server-side focused technology**.
+The traditional solutions to that type of problem are classic approaches like session replication using e.g. "Spring Session", see e.g. https://vaadin.com/tutorials/microservices/high-availability or
+https://vaadin.com/forum/thread/17281467/kubernetes-deployment.
+But it's not easy, read https://vaadin.com/blog/session-replication-in-the-world-of-vaadin for more details to the topic.
+I personally would try instead a "uni-directional" UI pattern approach (Flux/Redux/MVI/...)
+and only keep the "essential" (UI-Toolkit agnostic) UI-State "somewhere" in a "high-available" fashion.
+The "uni-directional" UI pattern approach gives you many more other benefits beside of beeing able to run in a **highly dynamic environment**
+like Kubernetes or Google App Engine (Flex).
 
 == Final last words
 
