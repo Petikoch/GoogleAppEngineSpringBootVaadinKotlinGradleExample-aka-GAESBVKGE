@@ -72,9 +72,9 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ... For the records
 .... https://github.com/GoogleCloudPlatform/app-gradle-plugin/issues/348
 
-== Caution
+== Caution: Combining Vaadin with Google App Engine (Flex) considered potentially harmful
 
-Vaadin is a **server-side focused technology**.
+Classic Vaadin (Framework 8, Flow) is a **server-side focused technology**.
 
 There is a lot of state on the server-side.
 E.g. inside the HTTP-Session of a Webcontainer like Tomcat, there is a VaadinSession.
