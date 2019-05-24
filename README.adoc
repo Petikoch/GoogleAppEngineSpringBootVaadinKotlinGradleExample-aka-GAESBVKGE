@@ -56,7 +56,7 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 .. This was the hard stuff for me... it took hours to find the right bits from the sea of outdated and sometimes incomplete information (I wasn't a GAE user before)
 .. Since Vaadin is a server-side focused technology, it needs "sticky sessions", which wasn't available in Google App Engine (Flex), up to to recent introduction of the WebSockets Beta
 ... Add `network/session_affinity: true` to link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
-... Note: This `session_affinity` option is at the moment not mentioned in the `app.yaml` reference docs https://cloud.google.com/appengine/docs/flexible/java/reference/app-yaml. I don't know how "experimental" it is but it seems to work fine and makes totally sense.
+... Note: The `session_affinity` option is at the moment not mentioned in the `app.yaml` reference docs https://cloud.google.com/appengine/docs/flexible/java/reference/app-yaml. I don't know how "experimental" it is but it seems to work fine and makes totally sense.
 ... For the records, the WebSockets Beta announcement:
 .... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
 .... https://cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity (scroll down to the end)
@@ -68,15 +68,18 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 ... Result: link:build.gradle.kts[build.gradle.kts]
 .. Properly configure the Gradle App Engine Plugin
 ... There were no "Gradle Kotlin DSL" syntax examples, all the examples used the Groovy Syntax
-... See/upvote https://github.com/GoogleCloudPlatform/app-gradle-plugin/issues/348
 ... Result: link:build.gradle.kts[build.gradle.kts]
+... For the records
+.... https://github.com/GoogleCloudPlatform/app-gradle-plugin/issues/348
 
 == Caution
 
 Vaadin is a **server-side focused technology**.
 
-There is a lot of state on the server-side (e.g. inside the HTTP-Session of a Webcontainer like Tomcat,
-there is the VaadinSession containing the server-side "half-objects" of the labels, buttons, textfields, radiobuttons, ...).
+There is a lot of state on the server-side.
+E.g. inside the HTTP-Session of a Webcontainer like Tomcat, there is a VaadinSession.
+The VaadinSession is the home of the UI Toolkit state on the server-side ("half objects pattern").
+The implementation of the "half objects pattern" syncs e.g. the value of a textfield  in client-side browser with the corresponding half object on the server-side.
 
 Google App Engine (Flex) is a **highly dynamic environment** where instances of your application may be started or killed at any time.
 There is absolutely no warranty in Google App Engine (Flex),
