@@ -9,17 +9,22 @@ Try: https://gaesbvkge.appspot.com/
 This example shows the setup of a Gradle project using these fascinating pieces of software
 
 * Google App Engine Flex Java 8 Runtime
+** Role: Cloud runtime environment (PAAS)
 ** https://cloud.google.com/appengine/docs/flexible/java/dev-java-only
 ** with the V.2 Gradle Plugin
 *** https://github.com/GoogleCloudPlatform/app-gradle-plugin
 * Spring Boot 2.1.x
+** Role: Application framework for the JVM (Java, Groovy, Kotlin, ...)
 ** https://spring.io/projects/spring-boot
 ** https://start.spring.io/
 * Vaadin 13.0.x
+** Role: Webapplication UI Toolkit
 ** https://vaadin.com/tutorials/vaadin-quick-start
 * Kotlin 1.3.x running on Java 8
+** Role: Modern, well designed programming language
 ** https://kotlinlang.org/docs/reference/
 * Gradle 5.4.x
+** Role: Build tool
 ** with the new, type-safe "Gradle Kotlin DSL" Syntax (instead the "old", dynamic Groovy syntax)
 ** https://gradle.org/
 
