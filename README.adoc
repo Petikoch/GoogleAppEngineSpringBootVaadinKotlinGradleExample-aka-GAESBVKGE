@@ -79,7 +79,7 @@ Classic Vaadin (Framework 8, Flow) is a **server-side focused technology**.
 There is a lot of state on the server-side.
 E.g. inside the HTTP-Session of a Webcontainer like Tomcat, there is a VaadinSession.
 The VaadinSession is the home of the UI Toolkit state on the server-side ("half objects pattern").
-The implementation of the "half objects pattern" syncs e.g. the value of a textfield  in client-side browser with the corresponding half object on the server-side.
+The implementation of the "half objects pattern" syncs e.g. the value of a textfield from the client-side browser with the corresponding half object on the server-side.
 
 Google App Engine (Flex) is a **highly dynamic environment** where instances of your application may be started or killed at any time.
 There is absolutely no warranty in Google App Engine (Flex),
@@ -92,13 +92,13 @@ You have the same issues when you run your Vaadin application on Kubernetes, Ope
 This has a potential huge impact on the way you write your application using a **server-side focused technology**.
 
 The traditional solutions to that type of problem are either moving the UI state of your application to the client (e.g. Angular, React with Redux, Vue.js,...)
-or insisting on using a **server-side focused technology** but "pimped" with classic approaches like session replication using e.g. "Spring Session", see e.g. https://vaadin.com/tutorials/microservices/high-availability or
+or insisting on using a **server-side focused technology** but "pimped" with approaches like session replication using e.g. "Spring Session", see e.g. https://vaadin.com/tutorials/microservices/high-availability or
 https://vaadin.com/forum/thread/17281467/kubernetes-deployment.
 
-But session replication is not easy, read https://vaadin.com/blog/session-replication-in-the-world-of-vaadin for more details to the topic.
+But session replication is not easy and puts a lot of burden on the developers, read https://vaadin.com/blog/session-replication-in-the-world-of-vaadin for more details to the topic.
 
-If you want to stay "on the server-side" I would recommend to investigate instead a "uni-directional" UI pattern approach (based on the ideas of Flux/Redux/MVI/...)
-and only keep the "essential" (UI-Toolkit agnostic) UI-State "somewhere" in a "high-available" fashion.
+If you want to stay "on the server-side" I would recommend to investigate instead in a "uni-directional" UI pattern approach (based on the ideas of Flux/Redux/MVI/...)
+and only keep the "bare" (UI-Toolkit agnostic) UI-State "somewhere" in a "high-available" fashion.
 Why not use a technology like Vaadin just as replaceable "UI-State renderer"?
 The "uni-directional" UI pattern approach gives you many more other benefits beside of beeing able to potentially run easily in a **highly dynamic environment**
 like Kubernetes or Google App Engine (Flex).
