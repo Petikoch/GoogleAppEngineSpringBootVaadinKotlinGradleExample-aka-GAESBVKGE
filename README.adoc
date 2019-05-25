@@ -84,7 +84,7 @@ The implementation of the "half objects pattern" syncs e.g. the value of a textf
 Google App Engine (Flex) is a **highly dynamic environment** where instances of your application may be started or killed at any time.
 There is absolutely no warranty in Google App Engine (Flex),
 that the server instance running one instance of your Vaadin application and hosting some of the HTTP-Sessions of your users,
-exists during the lifetime of the HTTP-Session of your users. Your Google App Engine (Flex) server instance and therefor HTTP-Sessions may be killed at any time.
+exists during the lifetime of the HTTP-Session of your users. Your Google App Engine (Flex) server instance and hence your HTTP-Sessions may be killed at any time.
 
 **This is the container era**!
 
