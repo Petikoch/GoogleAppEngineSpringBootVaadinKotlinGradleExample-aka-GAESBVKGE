@@ -106,7 +106,7 @@ like Kubernetes or Google App Engine (Flex).
 == Final last words
 
 I hope this example helps the reader to save some hours "to set things up".
-If you have questions / remarks, please use issue tracker of this Github project.
+If you have questions / remarks, please use the issue tracker of this Github project.
 
 Thanks to all the creators of the fascinating pieces of software used in the examples like
 
