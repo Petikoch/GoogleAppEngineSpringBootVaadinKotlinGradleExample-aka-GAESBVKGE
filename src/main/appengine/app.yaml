@@ -11,3 +11,6 @@ resources:
 # default memory_gb is 0.6. The default didn't work for me so I increased it.
 network:
   session_affinity: true
+automatic_scaling:
+  min_num_instances: 1
+# default is 2, using 1 instance instead because it is cheaper and this is only a demo
