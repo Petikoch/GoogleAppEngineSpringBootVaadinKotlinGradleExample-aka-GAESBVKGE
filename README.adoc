@@ -61,7 +61,7 @@ This example shows the setup of a Gradle project using these fascinating pieces 
 .... https://cloud.google.com/blog/products/application-development/introducing-websockets-support-for-app-engine-flexible-environment
 .... https://cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity (scroll down to the end)
 .. The default `resources.memory_gb` in link:src/main/appengine/app.yaml[src/main/appengine/app.yaml] is 0.6 and was too small for this "Spring Boot Vaadin Combo". The GAE instances did not start up properly and were not considered "healthy", the deployment always failed.
-... I set it to `2` gb, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
+... I increased it, see link:src/main/appengine/app.yaml[src/main/appengine/app.yaml]
 .. Using the "new" 2.x Version of the App Engine Gradle Plugin
 ... https://github.com/GoogleCloudPlatform/app-gradle-plugin
 ... and not the old, deprecated 1.x Version (https://github.com/GoogleCloudPlatform/gradle-appengine-plugin) which is everywhere in the official documentation (like here https://cloud.google.com/appengine/docs/flexible/java/using-gradle)
