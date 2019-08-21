@@ -2,8 +2,6 @@
 Peti Koch
 :imagesdir: ./docs
 
-Try: https://gaesbvkge.appspot.com/
-
 == Introduction
 
 This example shows the setup of a Gradle project using these fascinating pieces of software
