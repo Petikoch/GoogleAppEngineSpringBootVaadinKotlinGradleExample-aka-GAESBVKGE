@@ -16,11 +16,11 @@ buildscript {
 apply(plugin = "com.google.cloud.tools.appengine")
 
 plugins {
-	id("org.springframework.boot") version "2.1.5.RELEASE"
-	id("io.spring.dependency-management") version "1.0.7.RELEASE"
-	kotlin("jvm") version "1.3.31"
-	kotlin("plugin.spring") version "1.3.31"
-	id("com.github.ben-manes.versions") version "0.21.0"
+	id("org.springframework.boot")
+	id("io.spring.dependency-management")
+	kotlin("jvm")
+	kotlin("plugin.spring")
+	id("com.github.ben-manes.versions") version "0.25.0"
 }
 
 group = "ch.petikoch.examples"
@@ -32,7 +32,7 @@ repositories {
 	jcenter()
 }
 
-extra["vaadinVersion"] = "13.0.7"
+extra["vaadinVersion"] = "13.0.13"
 
 dependencies {
 	implementation("com.vaadin:vaadin-spring-boot-starter")
